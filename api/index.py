@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
     return 'Hello, World!'
 
-@app.loader('/loader',methods=['POST'])
+@app.route('/loader',methods=['POST'])
 def loader():
     if 'csv_data' not in request.files:
         return jsonify({'error':'No file part'})
