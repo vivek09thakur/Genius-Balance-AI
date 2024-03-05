@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,jsonify
 
 app = Flask(__name__)
 
@@ -10,5 +10,5 @@ def home():
 def greet():
     data = request.get_json()
     name = data['name']
-    return f'Hello, {name}!'
+    return jsonify({'message': f'Hello, {name}!'})
 
