@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     return 'Hello, World!'
 
-@app.route('/loader', methods=['GET'])
+@app.route('/loader', methods=['POST'])
 def test():
     data = request.get_json()
     file_path = data['file_path']
