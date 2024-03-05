@@ -18,9 +18,6 @@ def loader():
     if csv_file.filename == '':
         return jsonify({'error':'No selected file'})
     
-    if not csv_file.filename.endswith('.csv'):
-        return jsonify({'error':'Invalid file type, file must be in csv format'})
-    
     try:
         df = pd.read_csv(csv_file)
         data = df.to_dict(orient='records')
