@@ -6,10 +6,9 @@ app = Flask(__name__)
 def home():
     return 'Hello, World!'
 
-@app.route('/loader', methods=['POST'])
-def test():
+@app.route('/greet', methods=['POST'])
+def greet():
     data = request.get_json()
-    file_path = data['file_path']
-    with open(file_path, 'r') as file:
-        file_content = file.read()
-    return f'File content: {file_content}', 200
+    name = data['name']
+    return f'Hello, {name}!'
+
